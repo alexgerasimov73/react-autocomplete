@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/autocomplete-test-task/static/css/main.f4f0e5fb.css",
+    "main.js": "/autocomplete-test-task/static/js/main.8307cb55.js",
+    "index.html": "/autocomplete-test-task/index.html",
+    "main.f4f0e5fb.css.map": "/autocomplete-test-task/static/css/main.f4f0e5fb.css.map",
+    "main.8307cb55.js.map": "/autocomplete-test-task/static/js/main.8307cb55.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f4f0e5fb.css",
+    "static/js/main.8307cb55.js"
+  ]
+}
