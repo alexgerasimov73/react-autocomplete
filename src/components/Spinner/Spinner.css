@@ -1,0 +1,11 @@
+.Spinner circle {
+  stroke: var(--spinner-color);
+  transform-origin: 50px 50px;
+  animation: spin 1.2s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
