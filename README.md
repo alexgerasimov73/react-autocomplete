@@ -9,6 +9,9 @@ This is the basic part of the component with auto-complete. For a better user ex
 - component can have multiselect selections
 - some tests
 
+## Demo
+
+You can open demo on [github pages](https://alexgerasimov73.github.io/autocomplete-test-task/).
 
 ## Available Scripts
 
