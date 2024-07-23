@@ -1,13 +1,13 @@
 # README
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-This is the basic part of the component with auto-complete. For a better user experience I can finalize the following parts, but this will take a little more time:
+This is the basic part of the component with auto-complete. For a better user experience it needs to finalize the following parts:
 
-- better realization for styles
-- supporting label for the Input, icons, infinity load, and other
-- outside click event for hidding dropdown
-- component can have multiselect selections
-- some tests
+- clean button for the input;
+- supporting label for the Input, icons, infinity load, and others;
+- better realization of styles;
+- component can have multi-select selections;
+- some tests.
 
 ## Demo
 
@@ -21,7 +21,6 @@ In the project directory, you can run:
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
 
 ### `npm run build`
 

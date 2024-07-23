@@ -1,4 +1,4 @@
-export const getSplittedText = (label: string, enteredCharacters?: string): string[] => {
-  const highlightRegExp = new RegExp(`(${enteredCharacters})`, 'gi');
-  return label.split(highlightRegExp);;
+export const getSplittedText = (label: string, enteredLetters: string) => {
+  const highlightRegExp = new RegExp(`(${enteredLetters})`, 'gi');
+  return label.split(highlightRegExp);
 };
