@@ -1,9 +1,9 @@
 {
-  "name": "autocomplete-test-task",
+  "name": "react-autocomplete",
   "author": {
     "name": "Alex Gerasimov"
   },
-  "homepage": "https://alexgerasimov73.github.io/autocomplete-test-task/",
+  "homepage": "https://alexgerasimov73.github.io/react-autocomplete/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

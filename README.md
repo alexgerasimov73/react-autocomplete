@@ -11,7 +11,7 @@ This is the basic part of the component with auto-complete. For a better user ex
 
 ## Demo
 
-You can open demo on [github pages](https://alexgerasimov73.github.io/autocomplete-test-task/).
+You can open demo on [github pages](https://alexgerasimov73.github.io/react-autocomplete/).
 
 ## Available Scripts
 

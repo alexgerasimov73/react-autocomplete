@@ -1,7 +1,5 @@
 .Option {
-  display: flex;
   padding: 8px;
-  align-items: center;
   cursor: pointer;
 }
 
@@ -9,15 +7,10 @@
   background-color: var(--hovered-color);
 }
 
-.Option.Option__selected {
+.Option.Option-Selected {
   background-color: var(--selected-color);
 }
 
-.Option__enteredCharacters {
+.Option-EnteredLetters {
   background-color: var(--highlight-color);
-}
-
-.Option__checkmark {
-  margin-left: auto;
-  padding-left: 4px;
 }

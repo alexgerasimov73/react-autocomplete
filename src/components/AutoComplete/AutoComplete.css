@@ -2,30 +2,21 @@
   position: relative;
 }
 
-.AutoComplete__spinner {
-  width: 36px;
-  height: 36px;
-}
-
-.AutoComplete__error {
-  margin: 0;
-  padding: 8px;
-  text-align: left;
+.AutoCompleteInput-Error {
   color: var(--error-color);
 }
 
-.AutoComplete__dropdown {
+.AutoCompleteInput-Dropdown {
   position: absolute;
-  left: 0;
   width: 100%;
   max-height: 220px;
   border: 1px solid var(--border-color);
   border-radius: 8px;
-  background-color: var(--white-color);;
+  background-color: var(--white-color);
   overflow: scroll;
 }
 
-.AutoComplete__empty {
+.AutoCompleteInput-Empty {
   display: block;
   padding: 12px 8px;
   color: var(--placeholder-color);

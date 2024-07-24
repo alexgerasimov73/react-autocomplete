@@ -1,22 +1,23 @@
-.Input {
+.InputWithSpinner {
   display: flex;
   align-items: center;
   width: 100%;
   height: 56px;
-  padding: 8px;
   border: 1px solid var(--border-color);
   border-radius: 8px;
 }
 
-.Input__field {
+.InputWithSpinner-Field {
   flex: 1 1 auto;
   height: 100%;
-  font-size: 16px;
-  color: var(--text-color);
-  overflow: hidden;
+  padding: 8px;
   text-overflow: ellipsis;
+  font-size: var(--text-size);
+  overflow: hidden;
 }
 
-.Input__loader {
-  margin-left: 8px;
+.InputWithSpinner-Spinner {
+  display: flex;
+  height: 36px;
+  margin-right: 8px;
 }

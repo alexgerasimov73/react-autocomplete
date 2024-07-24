@@ -1,75 +1,71 @@
-import { FC } from 'react';
-
-import { Input } from '../Input';
-import { Option } from './modules/Option';
-import { Spinner } from '../Spinner';
-import { NO_OPTIONS } from '../../constants';
+import { useRef } from 'react';
+import { InputWithSpinner } from '../InputWithSpinner/InputWithSpinner';
 import { useSelectEvents } from '../../hooks/useSelectEvents';
-
+import { Option } from './modules/Option/Option';
+import { useOutsideClick } from '../../hooks/useOutsideClick';
+import { NOTHING_FOUND } from '../../constants';
 import './AutoComplete.css';
 
 export interface AutoCompleteOption {
-  key: string;
-  label: string;
+  readonly key: string;
+  readonly label: string;
 }
 
 export interface AutoCompleteProps {
-  options: AutoCompleteOption[];
-  error?: string;
-  isLoading?: boolean;
-  placeholder?: string;
-  onChange?: (key: AutoCompleteOption['key']) => void;
-  onChangeFilter?: (filter: string) => void;
+  readonly error?: string;
+  readonly isLoading?: boolean;
+  readonly options: ReadonlyArray<AutoCompleteOption>;
+  readonly placeholder?: string;
+  readonly onChangeFilter: (filter: string) => void;
 }
 
-export const AutoComplete: FC<AutoCompleteProps> = ({
-  options,
+export const AutoComplete = ({
   error,
   isLoading,
+  options,
   placeholder,
-  onChange,
   onChangeFilter,
-}) => {
-  const [
-    { selectedOption, searchValue, isOpened },
-    { handleChangeInput, handleClickSelectOption, handleClickInput }
-  ] = useSelectEvents({ options, onChange, onChangeFilter });
+}: AutoCompleteProps) => {
+  const {
+    isOpened,
+    searchValue,
+    selectedOption,
+    handleChangeInput,
+    handleCliickSelectOption,
+    handleCloseDropdown,
+    handleOpenDropdown,
+  } = useSelectEvents({ options, onChangeFilter });
+  const ref = useRef<HTMLDivElement>(null);
 
-  const getLoader = isLoading ? (
-    <div className='AutoComplete__spinner'>
-      <Spinner />
-    </div>
-  ) : undefined;
+  useOutsideClick({ elementRef: ref, enabled: isOpened, handler: handleCloseDropdown });
 
   return (
-    <div className='AutoComplete'>
-      <div className='AutoComplete__input'>
-        <Input
-          loader={getLoader}
+    <div className="AutoComplete" ref={ref}>
+      <div>
+        <InputWithSpinner
+          isLoading={isLoading}
           placeholder={placeholder}
-          value={searchValue ?? ''}
+          value={searchValue}
           onChange={handleChangeInput}
-          onClick={handleClickInput}
+          onFocus={handleOpenDropdown}
         />
-        {error && <p className='AutoComplete__error'>{error}</p>}
+        {error && <p className="AutoComplete-Error">{error}</p>}
       </div>
 
       {isOpened && (
-        <div className='AutoComplete__dropdown'>
+        <div className="AutoCompleteInput-Dropdown">
           {options.length > 0 ? (
             options.map((option) => (
               <Option
                 key={option.key}
-                data={option}
-                enteredCharacters={searchValue}
+                enteredLetters={searchValue}
                 isSelected={selectedOption === option.key}
-                onClick={handleClickSelectOption}
+                option={option}
+                onClick={handleCliickSelectOption}
               />
             ))
           ) : (
-            <span className='AutoComplete__empty'>
-              {NO_OPTIONS}
-            </span>
+            <span className="AutoCompleteInput-Empty">{NOTHING_FOUND}</span>
           )}
         </div>
       )}
